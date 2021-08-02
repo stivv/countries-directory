@@ -19,11 +19,10 @@ const search = (e) => {
 
 }
 
-onBeforeMount(() => {
-  axios.get('https://restcountries.eu/rest/v2/all').then(res => {
-    if(countries.value = res.data)
-      loading.value = false
-  })
+onBeforeMount(async () => {
+  const res = await axios.get('https://restcountries.eu/rest/v2/all')
+  if(countries.value = res.data)
+    loading.value = false
 })
 </script>
 
